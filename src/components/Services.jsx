@@ -50,7 +50,7 @@ const Services = () => {
               key={index}
               className="p-6 bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300"
               data-aos="fade-up"
-              data-aos-delay={200 + index * 100} // har bir card biroz kechikib chiqadi
+              data-aos-delay={200 + index * 100} 
             >
               <div className="flex justify-center mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>

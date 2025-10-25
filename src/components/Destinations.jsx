@@ -11,8 +11,8 @@ const Destinations = () => {
 
     useEffect(() => {
         AOS.init({
-            duration: 800, // animatsiya davomiyligi
-            once: true, // faqat bir marta ishlasin
+            duration: 800, 
+            once: true, 
         });
     }, []);
 

@@ -12,19 +12,16 @@ const Hero = () => {
   const backgroundImage =
     "https://img.freepik.com/free-vector/queue-immigrants-standing-holding-luggage-waiting-departure-airport-group-tourists-with-globe-map-pointers-destination-line-background-travel-immigration-concept_74855-10142.jpg?semt=ais_hybrid&w=740&q=80";
 
-  // AOSni ishga tushirish
   useEffect(() => {
     AOS.init({ duration: 1200 });
   }, []);
 
-  // Scroll aniqlash
   useEffect(() => {
     const handleScroll = () => setScrolling(true);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Sezilarli zoom effekti
   useEffect(() => {
     if (scrolling) return;
 
