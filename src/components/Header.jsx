@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Globe, Menu, X, Phone, Mail } from "lucide-react";
+import logo from "../../public/migrationwthoutbckfroundwhite.png";
+import logo2 from "../../public/migrationwthoutbckfround.png";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -61,13 +63,19 @@ const Header = () => {
           }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          <div className="flex items-center gap-2 font-bold font-serif text-xl cursor-pointer"
+          <div
+            className="flex items-center gap-2 font-bold font-serif text-xl cursor-pointer"
             onClick={() => handleScrollTo("home")}
           >
-            <Globe className="text-blue-600" />
-            <div>
-              International <br /> Migration Line
-            </div>
+            <img
+              src={
+                isScrolled
+                  ? logo2 
+                  : logo 
+              }
+              alt=""
+              className="w-50"
+            />
           </div>
 
           <ul className="hidden md:flex items-center gap-8 font-medium">
@@ -114,7 +122,6 @@ const Header = () => {
               {t("contact")}
             </li>
           </ul>
-
 
           <div className="flex items-center gap-3 md:hidden">
             <div className="flex items-center gap-2 text-sm">

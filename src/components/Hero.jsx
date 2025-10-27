@@ -24,27 +24,28 @@ const Hero = () => {
 
   useEffect(() => {
     if (scrolling) return;
-
     const interval = setInterval(() => {
       setScale((prev) => {
-        if (prev >= 1.05) return 1.05;
+        if (prev >= 1.05) return 1;
         return +(prev + 0.0005).toFixed(4);
       });
     }, 16);
-
     return () => clearInterval(interval);
   }, [scrolling]);
 
   return (
     <section
       id="hero"
-      className="relative h-screen w-full flex items-center justify-center bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        transform: `scale(${scale})`,
-        transition: "transform 0.2s linear",
-      }}
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          transform: `scale(${scale})`,
+        }}
+      ></div>
+
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center text-white">
@@ -98,7 +99,7 @@ const Hero = () => {
 
             <div className="flex flex-col items-center">
               <span className="text-4xl font-extrabold">
-                <CountUp end={5000} duration={3} />+
+                <CountUp end={1000} duration={3} />+
               </span>
               <span className="text-white/80">{t("hero_stat_2")}</span>
             </div>
