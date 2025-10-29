@@ -8,6 +8,11 @@ const Team = () => {
 
   const teamMembers = [
     {
+      name: t("director_name1"),
+      role: t("director1"),
+      phone: "+998 99-821-66-88",
+    },
+    {
       name: t("director_name"),
       role: t("director"),
       phone: "+998 97 920 70 71",
@@ -26,6 +31,11 @@ const Team = () => {
       name: t("consultant_name"),
       role: t("consultant"),
       phone: "+998 99 123 70 70",
+    },
+     {
+      name: t("consultant_name1"),
+      role: t("consultant1"),
+      phone: "+998 91 826 22 22",
     },
   ];
 
